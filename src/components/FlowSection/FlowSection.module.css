@@ -37,6 +37,10 @@
   line-height: 1.6;
 }
 
+.flowSection {
+  scroll-margin-top: 80px;
+}
+
 .flowCta {
   position: relative;
   z-index: 1;
@@ -70,6 +74,67 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.contactDivider {
+  color: var(--stone);
+  opacity: 0.4;
+  font-size: 0.9rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--stone);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.contactItem:hover {
+  color: var(--deep);
+}
+
+.contactItem:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.copyHint {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  margin-left: 0.2rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,93 @@
+.flowHeader {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 5rem 2rem;
+}
+
+.flowEyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.flowTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--deep);
+}
+
+.flowTitle em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage-dark);
+}
+
+.flowSubtitle {
+  font-size: 0.9rem;
+  color: var(--stone);
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.flowCta {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0rem 5rem 6rem;
+}
+
+.flowCtaInner {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.flowCtaText {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--deep);
+  letter-spacing: -0.01em;
+}
+
+.flowCtaText em {
+  color: var(--sage-dark);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.ctaLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .flowHeader {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  .flowTitle {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .flowCta {
+    padding: 0 1.5rem 4rem;
+  }
+  .ctaLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ctaLinks a,
+  .ctaLinks button {
+    text-align: center;
+  }
+}

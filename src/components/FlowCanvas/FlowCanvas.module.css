@@ -1,0 +1,84 @@
+.flowCanvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem 0 6rem;
+}
+
+.flowSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+
+.nodeWrap {
+  display: flex;
+  margin-bottom: 140px;
+  padding: 0 6rem;
+}
+
+.left {
+  justify-content: flex-start;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}
+
+.hoverHint {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 6rem;
+  margin-bottom: 1rem;
+}
+
+.hoverHint::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: var(--sage);
+  opacity: 0.5;
+}
+
+.hoverHintMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .flowSvg {
+    display: none;
+  }
+  .nodeWrap {
+    justify-content: center !important;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .hoverHint {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (hover: none) {
+  .hoverHintDesktop {
+    display: none;
+  }
+  .hoverHintMobile {
+    display: inline;
+  }
+}

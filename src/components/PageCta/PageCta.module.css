@@ -1,0 +1,108 @@
+.cta {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 5rem 6rem;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  font-style: italic;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--stone);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.contactItem:hover {
+  color: var(--deep);
+}
+
+.contactItem:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.copyHint {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* Changed from --sage (#7c9070, 3.16:1) to --sage-dark (#4a5e42, 6.38:1) for WCAG AA.
+     copyHint is now aria-hidden so contrast is decorative-only, but keeping it AA-compliant
+     for users who may force-style or inspect. */
+  color: var(--sage-dark);
+  margin-left: 0.2rem;
+  transition: color 0.2s;
+}
+
+/* Visually hidden but available to screen readers */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactItem {
+    font-size: 0.72rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  .copyHint {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

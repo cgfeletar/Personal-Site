@@ -1,0 +1,180 @@
+.node {
+  position: relative;
+  z-index: 2;
+  width: 380px;
+  perspective: 1000px;
+}
+
+.nodeSpecial {
+  width: 490px;
+}
+
+.nodeMedium {
+  width: 400px;
+}
+
+.nodeInner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 32px;
+}
+
+.nodeFront,
+.nodeBack {
+  width: 100%;
+  border-radius: 32px;
+  padding: 2.2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(44, 40, 32, 0.06);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid rgba(44, 40, 32, 0.08);
+  background: white;
+}
+
+.nodeBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.nodeSpecialFront {
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+}
+
+.nodeSpecialBack {
+  background: #9e4e2e;
+  border-color: #9e4e2e;
+}
+
+/* Title color cycling */
+.titleColor1 {
+  color: #4a5e42;
+}
+
+.titleColor2 {
+  color: #9e4e2e;
+}
+
+.titleColor3 {
+  color: #7a5a5a;
+}
+
+.titleSpecial {
+  color: rgba(247, 241, 232, 0.65);
+}
+
+.nodeTitle {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+  color: var(--deep);
+}
+
+.nodeDesc {
+  font-size: 0.84rem;
+  color: var(--stone);
+  line-height: 1.6;
+}
+
+.nodeDescSpecial {
+  color: rgba(247, 241, 232, 0.65);
+}
+
+.nodeBackEyebrow {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.nodeBackEyebrowSpecial {
+  color: rgba(247, 241, 232, 0.6);
+}
+
+.nodeBackText {
+  font-size: 0.84rem;
+  color: rgba(247, 241, 232, 0.85);
+  line-height: 1.65;
+}
+
+.nodeBackText strong {
+  color: var(--ivory);
+  font-weight: 500;
+}
+
+.nodeBackTextSpecial {
+  color: rgba(247, 241, 232, 0.9);
+}
+
+.loopBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--terracotta);
+  background: rgba(194, 113, 79, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  margin-top: 0.6rem;
+  width: fit-content;
+}
+
+.shipIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.nodeBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+/* Hover flip — only for pointer devices */
+@media (hover: hover) {
+  .node:hover .nodeInner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Touch/keyboard flip */
+.node.flipped .nodeInner {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nodeInner {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .node,
+  .nodeSpecial,
+  .nodeMedium {
+    width: 100%;
+  }
+  .nodeFront,
+  .nodeBack {
+    padding: 1.5rem 1.6rem;
+  }
+}

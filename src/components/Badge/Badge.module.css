@@ -1,0 +1,32 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 100px;
+  background: rgba(74, 94, 66, 0.08);
+  color: var(--sage-dark);
+  border: 1px solid rgba(74, 94, 66, 0.15);
+}
+
+.terracotta {
+  background: rgba(194, 113, 79, 0.08);
+  color: var(--terracotta);
+  border-color: rgba(194, 113, 79, 0.2);
+}
+
+.warm {
+  background: rgba(139, 110, 78, 0.08);
+  color: #7a5035;
+  border-color: rgba(139, 110, 78, 0.2);
+}
+
+.ivory {
+  background: rgba(247, 241, 232, 0.12);
+  color: var(--ivory);
+  border-color: rgba(247, 241, 232, 0.2);
+}

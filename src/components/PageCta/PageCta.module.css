@@ -1,85 +1,116 @@
 .cta {
+  background: #7a6552;
+  width: 100%;
+  padding: 5rem;
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 5rem 5rem 6rem;
 }
 
-.heading {
+.contactInner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contactHeading {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 300;
   font-style: italic;
-  color: var(--deep);
-  margin-bottom: 2rem;
+  color: var(--ivory);
   letter-spacing: -0.02em;
+  margin-bottom: 3rem;
 }
 
-.heading em {
-  font-style: italic;
-}
-
-.links {
+.contactList {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
 }
 
 .contactRow {
+  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 2.5rem;
+  border-right: 1px solid rgba(247, 241, 232, 0.18);
 }
 
-.contactDivider {
-  color: var(--stone);
-  opacity: 0.4;
-  font-size: 0.9rem;
-  line-height: 1;
-  user-select: none;
+.contactRow:first-child {
+  padding-left: 0;
 }
 
-.contactItem {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.78rem;
-  color: var(--stone);
+.contactRow:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.contactLabel {
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: rgba(247, 241, 232, 0.55);
+}
+
+.contactValueWrap {
+  margin: 0;
+}
+
+.contactValue {
+  font-size: 0.875rem;
+  color: var(--ivory);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  transition: opacity 0.2s;
+}
+
+.contactValue:hover {
+  opacity: 0.75;
+}
+
+.contactValue:focus-visible {
+  outline: 2px solid rgba(247, 241, 232, 0.6);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.contactValueBtn {
+  font-size: 0.875rem;
+  color: var(--ivory);
+  font-family: var(--font-sans);
   background: none;
   border: none;
-  cursor: pointer;
-  font-family: var(--font-sans);
   padding: 0;
-  transition: color 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  transition: opacity 0.2s;
+  text-align: left;
 }
 
-.contactItem:hover {
-  color: var(--deep);
+.contactValueBtn:hover {
+  opacity: 0.75;
 }
 
-.contactItem:focus-visible {
-  outline: 2px solid var(--sage-dark);
+.contactValueBtn:focus-visible {
+  outline: 2px solid rgba(247, 241, 232, 0.6);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .copyHint {
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  /* Changed from --sage (#7c9070, 3.16:1) to --sage-dark (#4a5e42, 6.38:1) for WCAG AA.
-     copyHint is now aria-hidden so contrast is decorative-only, but keeping it AA-compliant
-     for users who may force-style or inspect. */
-  color: var(--sage-dark);
-  margin-left: 0.2rem;
-  transition: color 0.2s;
+  color: rgba(247, 241, 232, 0.5);
 }
 
-/* Visually hidden but available to screen readers */
 .srOnly {
   position: absolute;
   width: 1px;
@@ -92,27 +123,25 @@
   border: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .cta {
-    padding: 3.5rem 1.5rem 4rem;
+    padding: 3rem 1.5rem 4rem;
   }
-}
-
-@media (max-width: 480px) {
-  .links {
+  .contactList {
     flex-direction: column;
-    align-items: center;
   }
-  .contactItem {
-    font-size: 0.72rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    gap: 0.3rem;
+  .contactRow {
+    flex: none;
+    flex-direction: column;
+    padding: 1.1rem 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(247, 241, 232, 0.12);
   }
-  .copyHint {
-    display: block;
-    width: 100%;
-    text-align: center;
+  .contactRow:first-child {
+    padding-top: 0;
+  }
+  .contactRow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }

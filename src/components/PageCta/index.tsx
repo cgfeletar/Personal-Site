@@ -21,7 +21,7 @@ export function PageCta() {
   return (
     <section id="contact" className={styles.cta} aria-label="Contact">
       <div className={styles.contactInner}>
-        <p className={styles.contactHeading}>Get in touch.</p>
+        <p className={styles.contactHeading}>Get in touch</p>
         <div role="status" aria-live="polite" className={styles.srOnly}>
           {copied ? "Email address copied to clipboard." : ""}
         </div>
@@ -36,6 +36,19 @@ export function PageCta() {
                 className={styles.contactValue}
               >
                 linkedin.com/in/caitlynfeletar
+              </a>
+            </dd>
+          </div>
+          <div className={styles.contactRow}>
+            <dt className={styles.contactLabel}>GitHub</dt>
+            <dd className={styles.contactValueWrap}>
+              <a
+                href="https://github.com/cgfeletar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contactValue}
+              >
+                github.com/cgfeletar
               </a>
             </dd>
           </div>
